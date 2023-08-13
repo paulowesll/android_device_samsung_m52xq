@@ -183,3 +183,7 @@ service remosaic_daemon /vendor/bin/remosaic_daemon
     class core
     user camera
     group camera
+
+on property:vendor.post_boot.parsed=1
+    # light sensor
+    write /sys/class/sensors/light_sensor/lcd_onoff 0
